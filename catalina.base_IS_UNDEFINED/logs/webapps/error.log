@@ -1,0 +1,3 @@
+2019-11-10 20:11:04.220 [main] ERROR guo.proj.javao2o.util.ImageUtil -java.io.FileNotFoundException: D:\prjectdev\image\upload\item\shop\40\2019111020110424297.jpg (???????????)
+2019-11-10 20:38:09.950 [main] ERROR guo.proj.javao2o.util.ImageUtil -java.io.FileNotFoundException: D:\prjectdev\image\upload\item\shop\41\2019111020380981018.jpg (???????????)
+2019-11-10 20:41:17.304 [main] ERROR guo.proj.javao2o.util.ImageUtil -java.io.FileNotFoundException: D:\prjectdev\image\upload\item\shop\42\2019111020411732877.jpg (???????????)
