@@ -1,60 +1,15 @@
-2019-11-10 20:11:03.852 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?, ?,?, ?,?) 
-2019-11-10 20:11:03.896 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==> Parameters: 1(Long), 2(Integer), 1(Long), testShop1(String), test1(String), test1(String), test1(String), null, null, 2019-11-10 20:11:03.812(Timestamp), 2019-11-10 20:11:03.812(Timestamp), 0(Integer), In review(String)
-2019-11-10 20:11:03.975 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -<==    Updates: 1
-2019-11-10 20:11:04.048 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current relativeAddr is :upload\item\shop\40\2019111020110424297.jpg
-2019-11-10 20:11:04.048 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current complete addr is:D:\prjectdev\image\upload\item\shop\40\2019111020110424297.jpg
-2019-11-10 20:11:04.239 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_desc=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, shop_category_id=?, area_id=? shop_addr=? where shop_id=? 
-2019-11-10 20:11:04.240 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==> Parameters: testShop1(String), test1(String), test1(String), upload\item\shop\40\2019111020110424297.jpg(String), 2019-11-10 20:11:03.812(Timestamp), 0(Integer), In review(String), 1(Long), 2(Integer), test1(String), 40(Long)
-2019-11-10 20:37:11.631 [main] DEBUG guo.proj.javao2o.dao.AreaDao.queryArea -==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
-2019-11-10 20:37:11.663 [main] DEBUG guo.proj.javao2o.dao.AreaDao.queryArea -==> Parameters: 
-2019-11-10 20:37:11.755 [main] DEBUG guo.proj.javao2o.dao.AreaDao.queryArea -<==      Total: 2
-2019-11-10 20:37:35.175 [main] DEBUG guo.proj.javao2o.dao.AreaDao.queryArea -==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
-2019-11-10 20:37:35.214 [main] DEBUG guo.proj.javao2o.dao.AreaDao.queryArea -==> Parameters: 
-2019-11-10 20:37:35.244 [main] DEBUG guo.proj.javao2o.dao.AreaDao.queryArea -<==      Total: 2
-2019-11-10 20:38:09.808 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?, ?,?, ?,?) 
-2019-11-10 20:38:09.846 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==> Parameters: 1(Long), 2(Integer), 1(Long), testShop1(String), test1(String), test1(String), test1(String), null, null, 2019-11-10 20:38:09.773(Timestamp), 2019-11-10 20:38:09.773(Timestamp), 0(Integer), In review(String)
-2019-11-10 20:38:09.848 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -<==    Updates: 1
-2019-11-10 20:38:09.863 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current relativeAddr is :upload\item\shop\41\2019111020380981018.jpg
-2019-11-10 20:38:09.864 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current complete addr is:D:\prjectdev\image\upload\item\shop\41\2019111020380981018.jpg
-2019-11-10 20:38:09.968 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_desc=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, shop_category_id=?, area_id=? shop_addr=? where shop_id=? 
-2019-11-10 20:38:09.968 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==> Parameters: testShop1(String), test1(String), test1(String), upload\item\shop\41\2019111020380981018.jpg(String), 2019-11-10 20:38:09.773(Timestamp), 0(Integer), In review(String), 1(Long), 2(Integer), test1(String), 41(Long)
-2019-11-10 20:41:17.164 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?, ?,?, ?,?) 
-2019-11-10 20:41:17.201 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==> Parameters: 1(Long), 2(Integer), 1(Long), testShop1(String), test1(String), test1(String), test1(String), null, null, 2019-11-10 20:41:17.127(Timestamp), 2019-11-10 20:41:17.127(Timestamp), 0(Integer), In review(String)
-2019-11-10 20:41:17.202 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -<==    Updates: 1
-2019-11-10 20:41:17.217 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current relativeAddr is :upload\item\shop\42\2019111020411732877.jpg
-2019-11-10 20:41:17.217 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current complete addr is:D:\prjectdev\image\upload\item\shop\42\2019111020411732877.jpg
-2019-11-10 20:41:17.320 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2019-11-10 20:41:17.321 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==> Parameters: testShop1(String), test1(String), test1(String), test1(String), upload\item\shop\42\2019111020411732877.jpg(String), 2019-11-10 20:41:17.127(Timestamp), 0(Integer), In review(String), 2(Integer), 1(Long), 42(Long)
-2019-11-10 20:41:17.396 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -<==    Updates: 1
-2019-11-10 20:51:39.755 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?, ?,?, ?,?) 
-2019-11-10 20:51:39.792 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==> Parameters: 1(Long), 2(Integer), 1(Long), testShop1(String), test1(String), test1(String), test1(String), null, null, 2019-11-10 20:51:39.722(Timestamp), 2019-11-10 20:51:39.722(Timestamp), 0(Integer), In review(String)
-2019-11-10 20:51:39.794 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -<==    Updates: 1
-2019-11-10 20:51:39.855 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current relativeAddr is :\upload\images\item\shop\43\2019111020513985272.jpg
-2019-11-10 20:51:39.855 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current complete addr is:D:\projectdev\image\upload\images\item\shop\43\2019111020513985272.jpg
-2019-11-10 20:51:39.969 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2019-11-10 20:51:39.969 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==> Parameters: testShop1(String), test1(String), test1(String), test1(String), \upload\images\item\shop\43\2019111020513985272.jpg(String), 2019-11-10 20:51:39.722(Timestamp), 0(Integer), In review(String), 2(Integer), 1(Long), 43(Long)
-2019-11-10 20:51:39.970 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -<==    Updates: 1
-2019-11-10 20:54:44.457 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?, ?,?, ?,?) 
-2019-11-10 20:54:44.495 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==> Parameters: 1(Long), 2(Integer), 1(Long), testShop1(String), test1(String), test1(String), test1(String), null, null, 2019-11-10 20:54:44.423(Timestamp), 2019-11-10 20:54:44.423(Timestamp), 0(Integer), In review(String)
-2019-11-10 20:54:44.497 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -<==    Updates: 1
-2019-11-10 20:54:44.513 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current relativeAddr is :\upload\images\item\shop\44\2019111020544422825.jpg
-2019-11-10 20:54:44.513 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current complete addr is:D:\projectdev\image\upload\images\item\shop\44\2019111020544422825.jpg
-2019-11-10 20:54:44.634 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2019-11-10 20:54:44.634 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==> Parameters: testShop1(String), test1(String), test1(String), test1(String), \upload\images\item\shop\44\2019111020544422825.jpg(String), 2019-11-10 20:54:44.423(Timestamp), 0(Integer), In review(String), 2(Integer), 1(Long), 44(Long)
-2019-11-10 20:54:44.635 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -<==    Updates: 1
-2019-11-10 22:52:40.072 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?, ?,?, ?,?) 
-2019-11-10 22:52:40.115 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==> Parameters: 1(Long), 2(Integer), 1(Long), testShop3(String), test3(String), test3(String), test3(String), null, null, 2019-11-10 22:52:40.032(Timestamp), 2019-11-10 22:52:40.032(Timestamp), 0(Integer), In review(String)
-2019-11-10 22:52:40.118 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -<==    Updates: 1
-2019-11-10 22:52:40.140 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current relativeAddr is :\upload\images\item\shop\45\2019111022524048334.jpg
-2019-11-10 22:52:40.140 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current complete addr is:D:\projectdev\image\upload\images\item\shop\45\2019111022524048334.jpg
-2019-11-10 22:52:40.285 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2019-11-10 22:52:40.285 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==> Parameters: testShop3(String), test3(String), test3(String), test3(String), \upload\images\item\shop\45\2019111022524048334.jpg(String), 2019-11-10 22:52:40.032(Timestamp), 0(Integer), In review(String), 2(Integer), 1(Long), 45(Long)
-2019-11-10 22:52:40.287 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -<==    Updates: 1
-2019-11-10 22:56:42.632 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?,?,?,?, ?,?,?,?,?, ?,?, ?,?) 
-2019-11-10 22:56:42.669 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -==> Parameters: 1(Long), 2(Integer), 1(Long), testShop4(String), test4(String), test4(String), test4(String), null, null, 2019-11-10 22:56:42.599(Timestamp), 2019-11-10 22:56:42.599(Timestamp), 0(Integer), In review(String)
-2019-11-10 22:56:42.671 [main] DEBUG guo.proj.javao2o.dao.ShopDao.insertShop -<==    Updates: 1
-2019-11-10 22:56:42.687 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current relativeAddr is :\upload\images\item\shop\46\2019111022564236935.jpg
-2019-11-10 22:56:42.687 [main] DEBUG guo.proj.javao2o.util.ImageUtil -current complete addr is:D:\projectdev\image\upload\images\item\shop\46\2019111022564236935.jpg
-2019-11-10 22:56:42.883 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
-2019-11-10 22:56:42.884 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -==> Parameters: testShop4(String), test4(String), test4(String), test4(String), \upload\images\item\shop\46\2019111022564236935.jpg(String), 2019-11-10 22:56:42.599(Timestamp), 0(Integer), In review(String), 2(Integer), 1(Long), 46(Long)
-2019-11-10 22:56:42.886 [main] DEBUG guo.proj.javao2o.dao.ShopDao.updateShop -<==    Updates: 1
+2019-12-17 18:26:01.060 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id = ? ORDER BY priority DESC 
+2019-12-17 18:26:01.101 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 1(Long)
+2019-12-17 18:26:01.395 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 1
+2019-12-17 19:04:13.790 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id = ? and parent_id is not null ORDER BY priority DESC 
+2019-12-17 19:04:13.829 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 1(Long)
+2019-12-17 19:04:13.860 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 1
+2019-12-17 19:16:54.887 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
+2019-12-17 19:16:54.920 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2019-12-17 19:16:54.948 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 1
+2019-12-17 19:17:23.034 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
+2019-12-17 19:17:23.070 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2019-12-17 19:17:23.098 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 1
+2019-12-17 19:20:33.634 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
+2019-12-17 19:20:33.668 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2019-12-17 19:20:33.696 [main] DEBUG g.p.javao2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 1

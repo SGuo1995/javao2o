@@ -2,10 +2,14 @@ package guo.proj.javao2o.web.shopadmin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import guo.proj.javao2o.dto.ShopExecution;
+import guo.proj.javao2o.entity.Area;
 import guo.proj.javao2o.entity.PersonInfo;
 import guo.proj.javao2o.entity.Shop;
+import guo.proj.javao2o.entity.ShopCategory;
 import guo.proj.javao2o.enums.ShopStateEnum;
 import guo.proj.javao2o.exceptions.ShopOperationException;
+import guo.proj.javao2o.service.AreaService;
+import guo.proj.javao2o.service.ShopCategoryService;
 import guo.proj.javao2o.service.ShopService;
 import guo.proj.javao2o.util.HttpServletRequestUtil;
 import guo.proj.javao2o.util.ImageUtil;
@@ -23,7 +27,9 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -31,7 +37,30 @@ import java.util.Map;
 public class ShopManagementController {
     @Autowired
     private ShopService shopService;
+    @Autowired
+    private ShopCategoryService shopCategoryService;
+    @Autowired
+    private AreaService areaService;
 
+    @RequestMapping(value = "/getshopinitinfo", method = RequestMethod.GET)
+    @ResponseBody
+    private Map<String, Object> getShopInitInfo() {
+        Map<String, Object> modelMap = new HashMap<>();
+        List<ShopCategory> shopCategoryList = new ArrayList<>();
+        List<Area> areaList = new ArrayList<>();
+        try {
+            shopCategoryList = shopCategoryService.getShopCategoryList(new ShopCategory());
+            areaList = areaService.getAreaList();
+            modelMap.put("shopCategoryList", shopCategoryList);
+            modelMap.put("areaList", areaList);
+            modelMap.put("success", true);
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+        }
+        return modelMap;
+
+    }
     @RequestMapping(value = "/registerShop", method = RequestMethod.POST)
     @ResponseBody
     private Map<String, Object> registerShop(HttpServletRequest request) {
