@@ -125,10 +125,10 @@ $(function () {
             cache: false,
             success: function (data) {
                 if (data.success) {
-                    $.toast('提交成功！');
+                    $.toast('Submission Success！');
 
                 } else {
-                    $.toast('提交失败！' + data.errMsg);
+                    $.toast('Submission Failed！' + data.errMsg);
                 }
                 // 点击验证码图片的时候，注册码会改变
                 $('#captcha_img').click();
