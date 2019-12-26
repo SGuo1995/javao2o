@@ -1,6 +1,7 @@
 package guo.proj.javao2o.service.impl;
 
 import guo.proj.javao2o.dao.ShopDao;
+import guo.proj.javao2o.dto.ImageHolder;
 import guo.proj.javao2o.dto.ShopExecution;
 import guo.proj.javao2o.entity.Shop;
 import guo.proj.javao2o.enums.ShopStateEnum;
@@ -31,7 +32,7 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
-        int rowIndex = PageCalculator.calculaterRowIndex(pageIndex, pageSize);
+        int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
         List<Shop> shopList = shopDao.queryShopList(shopCondition, rowIndex, pageSize);
         int count = shopDao.queryShopCount(shopCondition);
         ShopExecution se = new ShopExecution();
@@ -46,19 +47,19 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException {
+    public ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException {
 
         if (shop == null || shop.getShopId() == null) {
             return new ShopExecution(ShopStateEnum.NULL_SHOP);
         } else {
             //1. proceed img if needed
             try {
-                if (shopImgInputStream != null && !"".equals(fileName)) {
+                if (thumbnail.getImage() != null && !"".equals(thumbnail.getImageName())) {
                     Shop tempShop = shopDao.queryByShopId(shop.getShopId());
                     if (tempShop.getShopImg() != null) {
                         ImageUtil.deleteFileOrPath(tempShop.getShopImg());
                     }
-                    addShopImg(shop, shopImgInputStream, fileName);
+                    addShopImg(shop, thumbnail);
                 }
                 //2. update shop info
                 shop.setLastEditTime(new Date());
@@ -79,7 +80,7 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     @Transactional
-    public ShopExecution addShop(Shop shop, InputStream shopImgInputStream, String fileName) {
+    public ShopExecution addShop(Shop shop, ImageHolder thumbnail) {
         //check if null
         if (shop == null) {
             return new ShopExecution(ShopStateEnum.NULL_SHOP);
@@ -94,10 +95,10 @@ public class ShopServiceImpl implements ShopService {
             if (effectedNum <= 0) {
                 throw new ShopOperationException("Fail to add Shop");
             } else {
-                if (shopImgInputStream != null) {
+                if (thumbnail.getImage() != null) {
                     //save img
                     try {
-                        addShopImg(shop, shopImgInputStream, fileName);
+                        addShopImg(shop, thumbnail);
                     } catch (Exception e) {
                         throw new ShopOperationException("add Img error" + e.getMessage());
                     }
@@ -118,10 +119,10 @@ public class ShopServiceImpl implements ShopService {
 
     }
 
-    private void addShopImg(Shop shop, InputStream shopImgInputStream, String fileName) {
+    private void addShopImg(Shop shop, ImageHolder thumbnail) {
         //get relative path of the img fold
         String dest = PathUtil.getShopImagePath(shop.getShopId());
-        String shopImgAddr = ImageUtil.generateThumbnail(shopImgInputStream, fileName, dest);
+        String shopImgAddr = ImageUtil.generateThumbnail(thumbnail, dest);
         shop.setShopImg(shopImgAddr);
     }
 

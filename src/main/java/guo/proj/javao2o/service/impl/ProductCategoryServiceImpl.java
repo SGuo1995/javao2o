@@ -1,6 +1,7 @@
 package guo.proj.javao2o.service.impl;
 
 import guo.proj.javao2o.dao.ProductCategoryDao;
+import guo.proj.javao2o.dao.ProductDao;
 import guo.proj.javao2o.dto.ProductCategoryExecution;
 import guo.proj.javao2o.entity.ProductCategory;
 import guo.proj.javao2o.enums.ProductCategoryStateEnum;
@@ -17,6 +18,9 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
     @Autowired
     private ProductCategoryDao productCategoryDao;
+
+    @Autowired
+    private ProductDao productDao;
 
     @Override
     public List<ProductCategory> getProductCategoryList(long shopId) {
@@ -45,7 +49,16 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Override
     @Transactional
     public ProductCategoryExecution deleteProductCategory(long productCategoryId, long shopId) throws ProductCategoryOperationException {
-        // TO DO : set product_category_id of products belong to this category to be 0
+        // Set product_category_id of the products which belong to the category to be deleted as 0;
+        try {
+            int effectedNum = productDao.updateProductCategoryToNull(productCategoryId);
+            if (effectedNum < 0) {
+                throw new ProductCategoryOperationException("Failed to update product category");
+            }
+        } catch (Exception e) {
+            throw new ProductCategoryOperationException("delete product category error: " + e.getMessage());
+        }
+        //Delete product category
         try {
             int effectedNum = productCategoryDao.deleteProductCategory(productCategoryId, shopId);
             if (effectedNum <= 0) {

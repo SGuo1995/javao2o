@@ -2,23 +2,38 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="guo.proj.javao2o.dao.ProductDao">
     <resultMap id="productMap" type="guo.proj.javao2o.entity.Product">
-        <id column="product_id" property="productId" jdbcType="INTEGER" />
-        <result column="product_name" property="productName" jdbcType="VARCHAR" />
-        <result column="product_desc" property="productDesc" jdbcType="VARCHAR" />
-        <result column="img_addr" property="imgAddr" jdbcType="VARCHAR" />
-        <result column="normal_price" property="normalPrice" jdbcType="VARCHAR" />
-        <result column="promotion_price" property="promotionPrice" jdbcType="VARCHAR" />
-        <result column="priority" property="priority" jdbcType="INTEGER" />
-        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-        <result column="last_edit_time" property="lastEditTime" jdbcType="TIMESTAMP" />
-        <result column="enable_status" property="enableStatus" jdbcType="INTEGER" />
-        <result column="product_category_id" property="productCategoryId" jdbcType="INTEGER" />
-        <result column="shop_id" property="shopId" jdbcType="INTEGER" />
+        <id column="product_id" property="productId"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_desc" property="productDesc"/>
+        <result column="img_addr" property="imgAddr"/>
+        <result column="normal_price" property="normalPrice"/>
+        <result column="promotion_price" property="promotionPrice"/>
+        <result column="priority" property="priority"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_edit_time" property="lastEditTime"/>
+        <result column="enable_status" property="enableStatus"/>
+        <association property="productCategory" column="product_category_id"
+                     javaType="guo.proj.javao2o.entity.ProductCategory">
+            <id column="product_category_id" property="productCategoryId"/>
+            <result column="product_category_name" property="productCategoryName"/>
+        </association>
+        <association property="shop" column="shop_id"
+                     javaType="guo.proj.javao2o.entity.Shop">
+            <id column="shop_id" property="shopId"/>
+            <result column="owner_id" property="ownerId"/>
+            <result column="shop_name" property="shopName"/>
+        </association>
+        <collection property="productImgList" column="product_id"
+                    ofType="guo.proj.javao2o.entity.ProductImg">
+            <id column="product_img_id" property="productImgId"/>
+            <result column="detail_img" property="imgAddr"/>
+            <result column="img_desc" property="imgDesc"/>
+            <result column="priority" property="priority"/>
+            <result column="create_time" property="createTime"/>
+            <result column="product_id" property="productId"/>
+        </collection>
     </resultMap>
-    <sql id="Base_Column_List" >
-    product_id, product_name, product_desc, img_addr, normal_price, promotion_price,
-    priority, create_time, last_edit_time, enable_status, product_category_id, shop_id
-    </sql>
+
 
     <select id="queryProductList" resultType="guo.proj.javao2o.entity.Product">
         SELECT

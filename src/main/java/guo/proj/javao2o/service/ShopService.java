@@ -1,5 +1,6 @@
 package guo.proj.javao2o.service;
 
+import guo.proj.javao2o.dto.ImageHolder;
 import guo.proj.javao2o.dto.ShopExecution;
 import guo.proj.javao2o.entity.Shop;
 import guo.proj.javao2o.exceptions.ShopOperationException;
@@ -17,9 +18,10 @@ public interface ShopService {
      * @return
      */
     public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize);
-    ShopExecution addShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException;
+
+    ShopExecution addShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 
     Shop getByShopId(long shopId);
 
-    ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException;
+    ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 }

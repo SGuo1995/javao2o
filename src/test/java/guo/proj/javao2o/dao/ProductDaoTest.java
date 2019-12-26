@@ -30,9 +30,9 @@ public class ProductDaoTest extends BaseTest {
         Shop shop1 = new Shop();
         shop1.setShopId(36L);
         ProductCategory pc1 = new ProductCategory();
-        pc1.setProductCategoryId(1L);
-        // 初始化三个商品实例并添加进shopId为1的店铺里，
-        // 同时商品类别Id也为1
+        pc1.setProductCategoryId(3L);
+        // 初始化三个商品实例并添加进shopId为36的店铺里，
+        // 同时商品类别Id为3
         Product product1 = new Product();
         product1.setProductName("Test1");
         product1.setProductDesc("TestDesc1");
@@ -54,9 +54,9 @@ public class ProductDaoTest extends BaseTest {
         product2.setShop(shop1);
         product2.setProductCategory(pc1);
         Product product3 = new Product();
-        product3.setProductName("Cup");
-        product3.setProductDesc("CupDesc");
-        product3.setImgAddr("cup");
+        product3.setProductName("p3");
+        product3.setProductDesc("product 3");
+        product3.setImgAddr("p3");
         product3.setPriority(3);
         product3.setEnableStatus(1);
         product3.setCreateTime(new Date());
@@ -73,7 +73,7 @@ public class ProductDaoTest extends BaseTest {
     }
 
     @Test
-    @Ignore
+//    @Ignore
     public void testBQueryProductList() throws Exception {
         Product productCondition = new Product();
         // 分页查询，预期返回三条结果
@@ -81,13 +81,13 @@ public class ProductDaoTest extends BaseTest {
         assertEquals(3, productList.size());
         // 查询名称为测试的商品总数
         int count = productDao.queryProductCount(productCondition);
-        assertEquals(5, count);
+        assertEquals(8, count);
         // 使用商品名称模糊查询，预期返回两条结果
         productCondition.setProductName("Test");
         productList = productDao.queryProductList(productCondition, 0, 3);
-        assertEquals(2, productList.size());
+        assertEquals(3, productList.size());
         count = productDao.queryProductCount(productCondition);
-        assertEquals(2, count);
+        assertEquals(4, count);
     }
 
     @Test
@@ -139,10 +139,11 @@ public class ProductDaoTest extends BaseTest {
     }
 
     @Test
+//    @Ignore
     public void testEUpdateProductCategoryToNull() {
         // 将productCategoryId为2的商品类别下面的商品的商品类别置为空
         int effectedNum = productDao.updateProductCategoryToNull(2L);
-        assertEquals(1, effectedNum);
+        assertEquals(2, effectedNum);
     }
 
     @Test
@@ -151,9 +152,9 @@ public class ProductDaoTest extends BaseTest {
         // 清除掉insert方法添加的商品
         Product productCondition = new Product();
         ProductCategory pc = new ProductCategory();
-        pc.setProductCategoryId(1L);
+        pc.setProductCategoryId(3L);
         productCondition.setProductCategory(pc);
-        // 通过输入productCategoryId为1去商品表中查出新增的三条测试数据
+        // 通过输入productCategoryId为3去商品表中查出新增的三条测试数据
         List<Product> productList = productDao.queryProductList(productCondition, 0, 3);
         assertEquals(3, productList.size());
         // 循环删除这三条数据

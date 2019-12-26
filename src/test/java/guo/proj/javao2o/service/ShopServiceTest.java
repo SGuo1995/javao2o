@@ -1,6 +1,7 @@
 package guo.proj.javao2o.service;
 
 import guo.proj.javao2o.BaseTest;
+import guo.proj.javao2o.dto.ImageHolder;
 import guo.proj.javao2o.dto.ShopExecution;
 import guo.proj.javao2o.entity.Area;
 import guo.proj.javao2o.entity.PersonInfo;
@@ -12,6 +13,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -45,7 +47,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setShopName("Renamed");
         File shopImg = new File("C:\\Users\\24965\\Pictures\\Saved Pictures\\bolang.jpg");
         InputStream is = new FileInputStream(shopImg);
-        ShopExecution shopExecution = shopService.modifyShop(shop, is, "bolang.jpg");
+        ImageHolder imageHolder = new ImageHolder("bolang.jpg", is);
+        ShopExecution shopExecution = shopService.modifyShop(shop, imageHolder);
         System.out.println("New img Addr is :" + shopExecution.getShop().getShopImg());
 
     }
@@ -72,7 +75,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setShopName("testShop4");
         File shopImg = new File("C:\\Users\\24965\\Pictures\\Saved Pictures\\cat.jpg");
         InputStream is = new FileInputStream(shopImg);
-        ShopExecution se = shopService.addShop(shop, is, shopImg.getName());
+        ImageHolder imageHolder = new ImageHolder(shopImg.getName(), is);
+        ShopExecution se = shopService.addShop(shop, imageHolder);
         assertEquals(se.getState(), ShopStateEnum.CHECK.getState());
     }
 }
