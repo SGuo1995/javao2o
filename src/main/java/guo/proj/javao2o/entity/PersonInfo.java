@@ -8,7 +8,7 @@ public class PersonInfo {
     private String profileImg;
     private String email;
     private String gender;
-    private Integer enableStatues;
+    private Integer enableStatus;
     //1 Customer 2 seller 3 Administrator
     private Integer userType;
     private Date createTime;
@@ -54,12 +54,12 @@ public class PersonInfo {
         this.gender = gender;
     }
 
-    public Integer getEnableStatues() {
-        return enableStatues;
+    public Integer getEnableStatus() {
+        return enableStatus;
     }
 
-    public void setEnableStatues(Integer enableStatues) {
-        this.enableStatues = enableStatues;
+    public void setEnableStatus(Integer enableStatues) {
+        this.enableStatus = enableStatues;
     }
 
     public Integer getUserType() {
