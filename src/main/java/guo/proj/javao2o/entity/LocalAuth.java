@@ -3,6 +3,16 @@ package guo.proj.javao2o.entity;
 import java.util.Date;
 
 public class LocalAuth {
+    private Long localAuthId;
+
+    public Long getLocalAuthId() {
+        return localAuthId;
+    }
+
+    public void setLocalAuthId(Long localAuthId) {
+        this.localAuthId = localAuthId;
+    }
+
     private Long localAuth;
     private String username;
     private String password;
