@@ -2,7 +2,7 @@ package guo.proj.javao2o.dao;
 
 import guo.proj.javao2o.entity.Shop;
 import org.apache.ibatis.annotations.Param;
-import org.junit.runners.Parameterized;
+
 
 import java.util.List;
 

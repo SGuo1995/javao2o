@@ -74,17 +74,18 @@ public class ShopManagementController {
     @ResponseBody
     private Map<String, Object> getShopList(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
-        PersonInfo user = new PersonInfo();
-        user.setUserId(1L);
-        user.setName("Test");
-        request.getSession().setAttribute("user", user);
-        user = (PersonInfo) request.getSession().getAttribute("user");
+        PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
+//        user.setUserId(1L);
+//        user.setName("Test");
+//        request.getSession().setAttribute("user", user);
+//        user = (PersonInfo) request.getSession().getAttribute("user");
         //default value 1L since we haven't achieve log in function
         try {
             Shop shopCondition = new Shop();
             shopCondition.setOwner(user);
             ShopExecution se = shopService.getShopList(shopCondition, 0, 100);
             modelMap.put("shopList", se.getShopList());
+            request.getSession().setAttribute("shoplist", se.getShopList());
             modelMap.put("user", user);
             modelMap.put("success", true);
         } catch (Exception e) {
@@ -240,9 +241,10 @@ public class ShopManagementController {
                 se = shopService.addShop(shop, imageHolder);
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     modelMap.put("success", true);
+
                     //List of shop which the user owns
                     @SuppressWarnings("unchecked")
-                    List<Shop> shopList = (List<Shop>) request.getSession().getAttribute("shopList");
+                    List<Shop> shopList = (List<Shop>) request.getSession().getAttribute("shoplist");
                     if (shopList == null || shopList.size() == 0) {
                         shopList = new ArrayList<>();
                     }
