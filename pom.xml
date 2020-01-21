@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.imooc</groupId>
-    <artifactId>o2o</artifactId>
+    <groupId>guo.proj</groupId>
+    <artifactId>javao2o</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>o2o Maven Webapp</name>
+    <name>javao2o Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <properties>
         <spring.version>5.2.2.RELEASE</spring.version>
@@ -151,7 +151,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>o2o</finalName>
+        <finalName>javao2o</finalName>
         <plugins>
             <plugin>
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->

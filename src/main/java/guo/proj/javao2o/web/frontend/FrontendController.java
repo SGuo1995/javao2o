@@ -10,6 +10,7 @@ public class FrontendController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     private String index() {
+
         return "/frontend/index";
     }
 
